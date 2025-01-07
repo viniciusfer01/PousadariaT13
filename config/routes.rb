@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#index"
-  resources :inns, only: [:show]
+  resources :inns, only: [:show] 
+
+  resources :lists, only: [:new, :create, :show]
 
   resource :inn_management, only: [:show]
 

@@ -1,0 +1,12 @@
+<h1>Cadastrar Nova Lista</h1>
+
+<div>
+  <%= form_with model: @list do |f| %>
+    <div>
+      <%= f.label :name, "Nome" %>
+      <%= f.text_field :name %>
+    </div>
+
+    <%= f.submit "Adicionar" %>
+  <% end %>
+</div>
