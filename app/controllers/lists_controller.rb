@@ -1,4 +1,9 @@
 class ListsController < ApplicationController
+  before_action :authenticate_inn_owner!
+
+  def index
+    @lists = List.all
+  end
 
   def show
     @list = List.find(params[:id])
@@ -18,8 +23,8 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to @list, notice: 'Lista criada com sucesso.'
     else
-      # tratar falha
-      puts('Falha ao criar')
+      flash.now[:notice] = 'Nome não pode ficar em branco'
+      render :new, status: :unprocessable_entity
     end
   end
   

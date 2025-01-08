@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root "home#index"
   resources :inns, only: [:show] 
 
-  resources :lists, only: [:new, :create, :show]
+  resources :lists, only: [:new, :create, :show, :index]
 
   resource :inn_management, only: [:show]
 

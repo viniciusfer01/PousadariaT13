@@ -6,4 +6,5 @@ class InnOwner < ApplicationRecord
   accepts_nested_attributes_for :inn
   validates :first_name, :last_name, :document, presence: true
   validates :document, uniqueness: true
+  has_many :lists
 end

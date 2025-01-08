@@ -1,1 +1,5 @@
 <%= @list.name %>
+
+<% @list.inns.each do |inn| %>
+  <%= inn.name %>
+<% end %>

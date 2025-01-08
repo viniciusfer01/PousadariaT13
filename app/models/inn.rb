@@ -3,6 +3,7 @@ class Inn < ApplicationRecord
   validates :name, :registration_number, :description, presence: true, on: :update
   validates :registration_number, uniqueness: true
 
+  has_and_belongs_to_many :lists
   belongs_to :inn_owner
   has_one :address
   has_many :inn_rooms
