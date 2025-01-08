@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   namespace :inn_dashboard do
     resource :inns, only: [:edit, :update] do
+      post :favorite, on: :member
+      
       resource :inn_rooms, only: [:new, :create]
     end
 

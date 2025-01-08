@@ -2,7 +2,8 @@ class ListsController < ApplicationController
   before_action :authenticate_inn_owner!
 
   def index
-    @lists = List.all
+    owner = current_inn_owner
+    @lists = owner.lists
   end
 
   def show
